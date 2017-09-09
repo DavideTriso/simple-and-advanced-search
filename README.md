@@ -1,4 +1,86 @@
-# ADVANCED AND SIMPLE SEARCH
+# SIMPLE AND ADVANCED SEARCH
+
+Filter arrays of string by matching a query string on the client.
+Useful for combo-box widgets and similar.
+
+## Dependencies
+
+**No dependencies**
+
+## SIMPLE SEARCH
+
+Simple search performs a simple search by matching exactly the passed query string (case-insensitive).
 
 
-## SIMPLE SEARCH 
+### Arguments:
+
+* stringsCollection (type: array): the set of strings to search for a match.
+* queryString (type: string): the query string.
+
+
+### Output:
+
+The function returns an array with the indexes of the matched strings.
+
+
+### Usage example:
+
+```javascript
+
+var stringsCollection = ['string1', 'string2', 'string3'], //the set of string to search for a match
+  queryString = 'string2'; //the query string
+
+var searchResult = simpleSearch(stringsCollection, queryString); //search ...
+
+console.log(searchResult); // output: [1]
+
+```
+
+
+## ADVANCED SEARCH
+
+Advanced search performs an advanced search by calculating the Levenshtein distance for each pair of query string word and word of the strings to search (case-insensitive).
+
+
+### Arguments:
+
+* stringsCollection (type: array): the set of strings to search for a match.
+* queryString (type: string): the query string.
+* minDistance (type: float > 0 and < 1): the minimum Levenshtein distance for a word pair to be considered as a match.  
+* minAverageDistance (type: float > 0 and < 1): the minimum average Levenshtein distance of the matched words for the string to be considered as a match.
+
+
+### Output
+
+The function returns an array of objects containing the indexes of the matched strings and other useful informations about the match.
+
+* index: the index of the matched string.
+* wordMatchesCount: the number of matched words.
+* averageDistance: the sum of the matched word's distances divided by the number of matched words.
+* wordMatchesPercentage: the number of matched words divided by the number of words of the query string.
+* matchedWords: an array containing the matched words.
+
+
+### Usage example:
+
+```javascript
+
+var stringsCollection = ['string1', 'string2', 'string3'], //the set of string to search for a match
+  queryString = 'sring2'; //the query string
+
+var searchResult = advancedSearch(stringsCollection, queryString, 0.7, 0.7); //search ...
+
+console.log(searchResult); //output: {index: 2, wordMatchesCount: 1, averageDistance: 0.XXX, wordMatchesPercentage: 0.XXX, matchedWords: ['string2']}
+
+```
+
+## DEMOS
+
+Open the **simle-search/demo.html** and **advanced-search/demo.html** files in the browser and check the console for a real-world demo.
+
+
+## LICENSE
+
+**Simple and Advanced search** is licensed under the terms of the **MIT license**.
+
+See [LICENSE.md](LICENSE.md) for detailed informations.
