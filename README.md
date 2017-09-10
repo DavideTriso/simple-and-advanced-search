@@ -84,7 +84,7 @@ Open the **simle-search/demo.html** and **advanced-search/demo.html** files in t
 
 * MacBook Pro 15" 2016, **2.5 GHz Intel Core i7**, 16GB 1600 MHz DDR3.
 * Chrome version 60.0.3112.113 (Official Build) (64-bit)
-* Items in array (names of cities): 65592.
+* Items in array: 65592 (names of cities).
 * Query string: 'bolzano'.
 
 
