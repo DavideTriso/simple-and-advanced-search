@@ -1,7 +1,7 @@
 # SIMPLE AND ADVANCED SEARCH
 
 Filter arrays of strings by matching a query string on the client.
-Useful for combo-box widgets and similar.
+Useful for combobox widgets and similar.
 
 ## Dependencies
 
@@ -9,8 +9,10 @@ Useful for combo-box widgets and similar.
 
 ## SIMPLE SEARCH
 
-Simple search performs a simple search by matching exactly the passed query string (case-insensitive).
+**Simple search** searches an array of strings using javaScript **search()** function and regular expressions (case-insensitive).
 
+* < 300 bytes minified
+* Compatible with amd and require.js
 
 ### Arguments:
 
@@ -39,8 +41,10 @@ console.log(searchResult); // output: [1]
 
 ## ADVANCED SEARCH
 
-Advanced search performs an advanced search by calculating the Levenshtein distance for each pair of query string word and word of the strings to search (case-insensitive).
+**Advanced search** searches an array of strings for a match by calculating the Levenshtein distance for each pair of query string word and word of the strings to search (case-insensitive). Supports mispelled words.
 
+* < 900 bytes minified
+* Compatible with amd and require.js
 
 ### Arguments:
 
@@ -76,7 +80,7 @@ console.log(searchResult); //output: {index: 2, wordMatchesCount: 1, averageDist
 
 ## DEMOS
 
-Open the **simle-search/demo.html** and **advanced-search/demo.html** files in the browser and check the console for a real-world demo.
+Open the **simple-search/demo.html** and **advanced-search/demo.html** files in the browser and check the console for a real-world demo.
 
 
 ## EXECUTION TIME
@@ -88,12 +92,12 @@ Open the **simle-search/demo.html** and **advanced-search/demo.html** files in t
 * Query string: 'bolzano'.
 
 
-
 CUP Throttling | Simple search execution time | Advanced search execution time
 ---------------|------------------------------|---------------------------------
 No throttling | > 10 ms | > 140 ms
 5x slowdown | > 50 ms | > 820 ms
 20x slowdown | > 190 ms | > 3200 ms
+
 
 ## LICENSE
 
