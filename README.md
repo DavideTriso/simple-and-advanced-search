@@ -79,6 +79,22 @@ console.log(searchResult); //output: {index: 2, wordMatchesCount: 1, averageDist
 Open the **simle-search/demo.html** and **advanced-search/demo.html** files in the browser and check the console for a real-world demo.
 
 
+## PERFORMANCE
+
+
+* MacBook Pro 15" 2016, 2.5 GHz Intel Core i7, 16GB 1600 MHz DDR3.
+* Chrome version 60.0.3112.113 (Official Build) (64-bit)
+* Items in array (names of cities): 65592.
+* Query string: 'bolzano'.
+
+
+
+CUP Throttling | Simple search execution time | Advanced search execution time
+---------------|------------------------------|---------------------------------
+No throttling | > 10 ms | > 140 ms
+5x slowdown | > 50 ms | > 820 ms
+20x slowdown | > 190 ms | > 3200 ms
+
 ## LICENSE
 
 **Simple and Advanced search** is licensed under the terms of the **MIT license**.
