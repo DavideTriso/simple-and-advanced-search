@@ -1,6 +1,6 @@
 # SIMPLE AND ADVANCED SEARCH
 
-Filter arrays of string by matching a query string on the client.
+Filter arrays of strings by matching a query string on the client.
 Useful for combo-box widgets and similar.
 
 ## Dependencies
@@ -14,13 +14,13 @@ Simple search performs a simple search by matching exactly the passed query stri
 
 ### Arguments:
 
-* stringsCollection (type: array): the set of strings to search for a match.
-* queryString (type: string): the query string.
+* **stringsCollection** (type: array): the set of strings to search for a match.
+* **queryString** (type: string): the query string.
 
 
 ### Output:
 
-The function returns an array with the indexes of the matched strings.
+The function returns an array with the indexes of the matched strings (position of the item in the stringsCollection array).
 
 
 ### Usage example:
@@ -44,21 +44,21 @@ Advanced search performs an advanced search by calculating the Levenshtein dista
 
 ### Arguments:
 
-* stringsCollection (type: array): the set of strings to search for a match.
-* queryString (type: string): the query string.
-* minDistance (type: float > 0 and < 1): the minimum Levenshtein distance for a word pair to be considered as a match.  
-* minAverageDistance (type: float > 0 and < 1): the minimum average Levenshtein distance of the matched words for the string to be considered as a match.
+* **stringsCollection** (type: array): the set of strings to search for a match.
+* **queryString** (type: string): the query string.
+* **minDistance** (type: float > 0 and < 1): the minimum Levenshtein distance for a word pair to be considered as a match. 
+* **minAverageDistance** (type: float > 0 and < 1): the minimum average Levenshtein distance of the matched words for the string to be considered as a match.
 
 
 ### Output
 
 The function returns an array of objects containing the indexes of the matched strings and other useful informations about the match.
 
-* index: the index of the matched string.
-* wordMatchesCount: the number of matched words.
-* averageDistance: the sum of the matched word's distances divided by the number of matched words.
-* wordMatchesPercentage: the number of matched words divided by the number of words of the query string.
-* matchedWords: an array containing the matched words.
+* **index**: the index of the matched string (position of the item in the stringsCollection array).
+* **wordMatchesCount**: the number of matched words.
+* **averageDistance**: the sum of the matched word's distances divided by the number of matched words.
+* **wordMatchesPercentage**: the number of matched words divided by the number of words of the query string.
+* **matchedWords**: an array containing the matched words.
 
 
 ### Usage example:
@@ -79,7 +79,7 @@ console.log(searchResult); //output: {index: 2, wordMatchesCount: 1, averageDist
 Open the **simle-search/demo.html** and **advanced-search/demo.html** files in the browser and check the console for a real-world demo.
 
 
-## PERFORMANCE
+## EXECUTION TIME
 
 
 * MacBook Pro 15" 2016, **2.5 GHz Intel Core i7**, 16GB 1600 MHz DDR3.
