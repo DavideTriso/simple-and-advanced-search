@@ -12,7 +12,7 @@ Useful for combobox widgets and similar.
 **Simple search** searches an array of strings using javaScript **search()** function and regular expressions (case-insensitive).
 
 * < 300 bytes minified
-* Compatible with amd and require.js
+* UMD support
 
 ### Arguments:
 
@@ -44,13 +44,13 @@ console.log(searchResult); // output: [1]
 **Advanced search** searches an array of strings for a match by calculating the Levenshtein distance for each pair of query string word and word of the strings to search (case-insensitive). Supports mispelled words.
 
 * < 900 bytes minified
-* Compatible with amd and require.js
+* UMD support
 
 ### Arguments:
 
 * **stringsCollection** (type: array): the set of strings to search for a match.
 * **queryString** (type: string): the query string.
-* **minDistance** (type: float > 0 and < 1): the minimum Levenshtein distance for a word pair to be considered as a match. 
+* **minDistance** (type: float > 0 and < 1): the minimum Levenshtein distance for a word pair to be considered as a match.
 * **minAverageDistance** (type: float > 0 and < 1): the minimum average Levenshtein distance of the matched words for the string to be considered as a match.
 
 
@@ -72,7 +72,7 @@ The function returns an array of objects containing the indexes of the matched s
 var stringsCollection = ['string1', 'string2', 'string3'], //the set of string to search for a match
   queryString = 'sring2'; //the query string
 
-var searchResult = advancedSearch(stringsCollection, queryString, 0.7, 0.7); //search ...
+var searchResult = AdvancedSearch(stringsCollection, queryString, 0.7, 0.7); //search ...
 
 console.log(searchResult); //output: {index: 2, wordMatchesCount: 1, averageDistance: 0.XXX, wordMatchesPercentage: 0.XXX, matchedWords: ['string2']}
 
